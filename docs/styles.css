@@ -94,8 +94,8 @@ body::before {
 .brand:hover { color: var(--accent); }
 
 .brand-icon {
-    width: 32px;
-    height: 32px;
+    width: 40px;
+    height: 40px;
     /* High-res transparent PNG (256px source) downscaled — let the
        browser smooth it instead of the old crisp-edges, which was
        only there to cope with upscaling a tiny .ico frame. */
