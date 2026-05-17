@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Features - LesserEvil</title>
+<link rel="icon" type="image/x-icon" href="IconNew.ico">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="container">
+    <a href="index.html" class="brand"><img src="brand-logo.png" alt="" class="brand-icon">LESSER EVIL</a>
+    <nav>
+      <a href="about.html">About</a>
+      <a href="download.html">Download</a>
+      <a href="features.html" class="active">Features</a>
+      <a href="https://ko-fi.com/lesserevil" class="donate-btn" target="_blank" rel="noopener">&#9829; Donate</a>
+    </nav>
+  </div>
+</header>
+
+<header class="page-header">
+  <div class="container">
+    <h1>Features</h1>
+    <p class="lede">
+      Reference for every tab in the desktop app. Use the sidebar to jump
+      straight to a section.
+    </p>
+  </div>
+</header>
+
+<div class="docs-layout">
+
+  <aside class="toc-nav">
+    <h3>Contents</h3>
+    <ul>
+      <li>
+        <a href="#overview">Overview</a>
+        <ul>
+          <li><a href="#overview-features">Feature Tabs</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#main">Main</a>
+        <ul>
+          <li><a href="#main-maintenance">Maintenance Mode</a></li>
+          <li><a href="#main-visibility">Visibility Filtering</a></li>
+          <li><a href="#main-speed">Speed</a></li>
+          <li><a href="#main-compact-mode">Compact mode</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#profiles">Profiles</a>
+        <ul>
+          <li><a href="#profiles-contents">Overview</a></li>
+          <li><a href="#profiles-where">User Interface</a></li>
+          <li><a href="#profiles-editor">Profile Editor</a></li>
+          <li><a href="#profiles-activation">Activating Profiles</a></li>
+          <li><a href="#profiles-scoping">Hotkey scoping</a></li>
+          <li><a href="#profiles-zoning">Keeping Profiles On While Zoning</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#warp">Warp</a>
+        <ul>
+          <li>
+            <a href="#warp-modes">Point/Player Warp</a>
+            <ul>
+              <li><a href="#warp-saving">Saving Warp Points</a></li>
+            </ul>
+          </li>
+          <li><a href="#nudge">Position Nudge</a></li>
+          <li>
+            <a href="#entity-list">Entity List</a>
+            <ul>
+              <li><a href="#entity-warp">Warp To Entity</a></li>
+            </ul>
+          </li>
+          <li><a href="#warp-all">Warp All</a></li>
+          <li><a href="#warp-guard-banner">Warp Guard</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#map">Map</a>
+        <ul>
+          <li><a href="#map-navigation">Navigation</a></li>
+          <li><a href="#map-overlays">Live Overlays</a></li>
+          <li><a href="#map-spawn-dots">Floor Selector</a></li>
+          <li>
+            <a href="#map-warp-points">Warp Points</a>
+            <ul>
+              <li><a href="#map-save-position">Saving Warp Points</a></li>
+            </ul>
+          </li>
+          <li><a href="#map-tracking-viz">Tracking</a></li>
+          <li><a href="#map-popouts">Pop-out Maps</a></li>
+          <li><a href="#map-bottom-bar">Bottom bar reference</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#scan">Scan &amp; Track</a>
+        <ul>
+          <li><a href="#scan-addon">Addon Requirements</a></li>
+          <li><a href="#scan-zone">Zone Scan</a></li>
+          <li><a href="#scan-buttons">Actions</a></li>
+          <li><a href="#scan-notes">Entity Notes</a></li>
+          <li><a href="#scan-tracking">Tracking</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#actions">Actions &amp; Hotkeys</a>
+        <ul>
+          <li><a href="#actions-basics">Action Basics</a></li>
+          <li><a href="#actions-primitives">Available Actions</a></li>
+          <li><a href="#actions-steps">Per-step options</a></li>
+          <li><a href="#actions-saved">Using Actions</a></li>
+          <li><a href="#actions-anatomy">Hotkey Basics</a></li>
+          <li><a href="#actions-scope">Hotkey Scope</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#other">Other</a>
+        <ul>
+          <li><a href="#other-display">Display &amp; Behavior</a></li>
+          <li><a href="#other-warp-guard">Warp Guard</a></li>
+          <li><a href="#other-warp-group">Warp Group</a></li>
+          <li><a href="#other-ffxi">FFXI installation</a></li>
+          <li><a href="#other-language">Language</a></li>
+          <li><a href="#other-storage">Where Settings Live</a></li>
+        </ul>
+      </li>
+    </ul>
+  </aside>
+
+  <main class="docs-content">
+    <section id="overview" class="feature-section">
+      <h2>Overview</h2>
+    <p>The main user interface of LesserEvil is split into three major components:</p>
+
+    <figure class="feature-figure">
+      <img src="images/overview-titlebar.png" alt="LesserEvil title bar with CHARACTER and PROFILE selectors and the feature tab row">
+      <figcaption>The main title bar and sections of LesserEvil.</figcaption>
+    </figure>
+
+    <ul>
+      <li><strong>CHARACTER</strong> - pick and switch between who is the focused character.</li>
+      <li><strong>PROFILE</strong> - load a saved profile. <strong>EDIT</strong> opens the profile editor; <strong>OFF</strong> disables the active profile.</li>
+      <li><strong>FEATURE TABS</strong> - split into multiple feature tabs to organize related features.</li>
+    </ul>
+    
+    <h3 id="overview-features">Feature Tabs</h3>
+    <p>LesserEvil is split into multple tabs to better organize its features.</p>
+    <ul>
+      <li><strong>MAIN</strong> - main tab handling character specific features like visibility filters and speed modifiers.</li>
+      <li><strong>WARP</strong> - multiple different warp functionality based on entity, player, point, etc.</li>
+      <li><strong>MAP</strong> - visual map with live overlays and map warp functionality.</li>
+      <li><strong>SCAN</strong> - scan for specific entities ingame and optionally warp to or track them.
+      <p class="note">SCAN functionality requires the LesserEvil companion addon to be loaded.</p>
+      </li>
+      <li><strong>ACTION</strong> - create actions that can be executed ingame and bind them to hotkeys.</li>
+      <li><strong>OTHER</strong> - handles configuration settings and other settings.</li>
+    </ul>
+  </section>
+
+  <!-- ── MAIN ──────────────────────────────────────────────────────────── -->
+    <section id="main" class="feature-section">
+      <h2>Main</h2>
+      <p class="feature-lede">
+        Main control panel for the focused character. Controls status, visibility filters,
+        speed.
+      </p>
+
+      <figure class="feature-figure">
+        <img src="images/main-tab.png" alt="LesserEvil Main tab showing Flags, Visibility, and Speed sections">
+        <figcaption>The main section of LesserEvil deals with character specific settings.</figcaption>
+      </figure>
+
+      <h3 id="main-maintenance">Maintenance Mode</h3>
+      <p>Maintenance Mode allows you to ignore all collision and clipping, allowing you to run through walls or terrain.</p>
+      <p>Toggle on and off with by clicking the button.</p>
+
+      <h3 id="main-visibility">Visibility Filtering</h3>
+      <p>Hide other entities locally:</p>
+      <ul>
+        <li><strong>PLAYER / NPC / MOB</strong> - On/Off toggles per category.</li>
+        <li><strong>Name filter</strong> - type a name to selectively hide only matching entities. Supports partial names.</li>
+      </ul>
+      <p class="note">
+        Visibility changes are local to your client only.
+      </p>
+
+      <h3 id="main-speed">Speed</h3>
+      <p>Adjusts your character's movement speed.</p>
+      <dl>
+        <dt>Enable</dt>
+        <dd>Toggle for normal speed modification. The slider sets the percent boost above the base FFXI movement speed.</dd>
+        <dt>Smart (Smart Flee)</dt>
+        <dd>Smart flee disables the speed modifier when an untrusted player is detected within ~50 yalms. Utilizes a whitelist for to not turn it off around trusted players.</dd>
+      </dl>
+      <p>
+        The Smart panel has a <strong>WHITELIST</strong> for additional trusted
+        names and three <em>Keep speed active during</em>
+        toggles (Chocobo, Flee, Bind) that override the safety drop while those
+        statuses are active.
+      </p>
+      <p class="note">All characters currently attached to LesserEvil are autoamtically whitelisted and will not deactivate Smart Flee.</p>
+
+      <h3 id="main-compact-mode">Compact mode</h3>
+      <p>
+        The window can collapse to a smaller UI - Toggle it by clicking the Compact button at the top right.
+      </p>
+    </section>
+
+    <!-- ── PROFILES ──────────────────────────────────────────────────────── -->
+    <section id="profiles" class="feature-section">
+      <h2>Profiles</h2>
+      <p class="feature-lede">
+        Preset configurations that bundle speed, visibility, and filter
+        settings of multiple characters. Activated manually, on a hotkey, or automatically
+        when entering a zone.
+      </p>
+
+      <figure class="feature-figure">
+        <img src="images/profile-bar.png" alt="LesserEvil profile bar with the profile dropdown, EDIT and OFF buttons">
+        <figcaption>The main profile UI bar.</figcaption>
+      </figure>
+
+      <h3 id="profiles-contents">Overview</h3>
+      <p>
+        A profile is a named bundle of <em>per-character overrides</em>. One
+        profile can carry settings for multiple characters at once.
+      </p>
+      <p>For each character a profile can override:</p>
+      <ul class="grid-list">
+        <li><strong>Speed Enabled</strong> + <strong>Speed Amount</strong></li>
+        <li><strong>Smart Speed</strong> + <strong>Smart Amount</strong></li>
+        <li><strong>Hide Players</strong> / <strong>NPCs</strong> / <strong>Mobs</strong></li>
+        <li><strong>Visibility Filter</strong> - list of names to hide selectively</li>
+      </ul>
+
+      <h3 id="profiles-where">User Interface</h3>
+      <p>The profile bar can be found at the top of the LesserEvil, beside the character dropdown, with the following functions:</p>
+      <ul>
+        <li><strong>PROFILE SELECTOR</strong> - pick a saved profile from the dropdown to load it on the focused character.</li>
+        <li><strong>EDIT</strong> - opens the profile editor window for the selected profile.</li>
+        <li><strong>ON/OFF</strong> - enables/disables the currently selected profile.</li>
+      </ul>
+
+      <h3 id="profiles-editor">Profile Editor</h3>
+      <p>
+        Click <strong>EDIT</strong> next to the profile dropdown (or
+        <strong>+ NEW PROFILE</strong> from the manage view) to open the editor.
+      </p>
+
+      <figure class="feature-figure">
+        <img src="images/profile-editor.png" alt="LesserEvil Profile Manager window showing the profile editor and per-character settings">
+        <figcaption>An example of a profile in the LesserEvil profile editor.</figcaption>
+      </figure>
+
+      <dl>
+        <dt>Name</dt>
+        <dd>Name of the profile. Used for selection in the dropdown and hotkey/action references.</dd>
+        <dt>Character Settings</dt>
+        <dd>Add any attached character to the profile and configure their settings.</dd>
+        <dt>Auto-load zones</dt>
+        <dd>Define zones that should auto-activate this profile on entry. The profile deactivates automatically when you leave the zone (unless <em>Keep Profiles On While Zoning</em> is enabled in <a href="#other">Other</a>).</dd>
+        <dt>Scoped Hotkeys</dt>
+        <dd>The editor lists every hotkey scoped to this profile so you can see at a glance which actions are gated by it. Add new ones from the <a href="#actions">Actions &amp; Hotkeys</a> tab with <em>Active when</em> set to the profile name.</dd>
+      </dl>
+
+      <h3 id="profiles-activation">Activating Profiles</h3>
+
+      <figure class="feature-figure">
+        <img src="images/profile-activated.png" alt="LesserEvil profile bar with the ON button highlighted green, indicating an active profile">
+        <figcaption>An example of a profile activated with the green ON.</figcaption>
+      </figure>
+
+      <p><strong>Manual</strong> - select a profile from the dropdown, then click the ON/OFF button to toggle activation.</p>
+      <p><strong>Hotkey-driven</strong> - use the <em>Load &amp; Activate</em> action (Profile category) bound to a key combo. Or <em>Toggle Profile On/Off</em> to toggle the currently selected profile on/off.</p>
+      <p><strong>Zone Auto-load</strong> - list a zone in the profile's auto-load zones and entering that zone activates the profile automatically. Leaving it deactivates it.</p>
+
+      <h3 id="profiles-scoping">Hotkey scoping</h3>
+      <p>
+        On the <a href="#actions">Actions &amp; Hotkeys</a> tab, every hotkey can
+        be bound to "<em>Any profile</em>" (default) or to a specific profile.
+        Profile-scoped hotkeys only fire while that exact profile is active.
+      </p>
+
+      <h3 id="profiles-zoning">Keeping Profiles On While Zoning</h3>
+      <p class="note">
+        By default, the active profile is deactivated whenever any of its
+        included characters changes zones for safety.
+      </p>
+      <p>
+        This behavior can be changed by toggling <strong>Keep Profiles On While Zoning</strong> in
+        <a href="#other">Other</a> to disable the auto-deactivation if you'd
+        rather profiles persist across zones until you turn them off manually.
+      </p>
+
+      <p>Raw Profile data is stored in <code>config/profiles.json</code>.</p>
+    </section>
+
+    <!-- ── WARP ──────────────────────────────────────────────────────────── -->
+    <section id="warp" class="feature-section">
+      <h2>Warp</h2>
+      <p class="feature-lede">
+        Save and manage warp points, jump between characters, warp to targetted entities, and nudge for micropositioning.
+      </p>
+
+      <figure class="feature-figure">
+        <img src="images/warp-tab.png" alt="LesserEvil Warp tab showing point/player warp, position nudge, and entities in memory">
+        <figcaption>The main UI for Warp functions.</figcaption>
+      </figure>
+
+      <h3 id="warp-modes">Point/Player Warp</h3>
+      <p>The WARP section contains two primary modes:</p>
+      <dl>
+        <dt>POINT</dt>
+        <dd>Warp to a saved point in the current zone. Points are organized per zone-name.</dd>
+        <dt>PLAYER</dt>
+        <dd>Warp to another attached character's current position.</dd>
+      </dl>
+
+      <h4 id="warp-saving">Saving Warp Points</h4>
+      <p>
+        Stand at a location in-game, then save it by name by clicking ADD in the WARP section. Points are stored in
+        <code>config/saved.points.json</code>.
+      </p>
+      <p class="note">
+        Points are matched by zone <em>name</em>, so the same point
+        name in two different zones is treated as two distinct entries.
+      </p>
+
+      <h3 id="nudge">Position Nudge</h3>
+      <p>
+        Provides a d-pad style interface for allowing the user to make micro-adjustments to their character(s) position.
+      </p>
+
+      <h3 id="entity-list">Entity List</h3>
+      <p>
+        Provides a live list of entities in memory (50y radius around the player) This is split up into two lists:
+      </p>
+      <dl>
+        <dt>PLAYER / NPC</dt>
+        <dd>Lists the current PLAYER / NPC entities in the immediate vicinity. Swap between player/npc by clicking on the respective tabs.</dd>
+        <dt>MONSTER</dt>
+        <dd>Lists the current mob/monster entities in the immediate vicinity.</dd>
+      </dl>
+      <h4 id="entity-warp">Warp To Entity</h4>
+      <p>
+        LesserEvil allows multiple ways to warp to entities in memory</code>:
+      </p>
+      <ul>
+        <li><strong>WARP (NEAREST PC/NPC)</strong> - warps to the nearest player character.</li>
+        <li><strong>WARP (NEAREST MONSTER)</strong> - warps to the nearest living monster. Skips dead monsters.</li>
+        <li><strong>WARP TO TARGET</strong> - warps to the entity the player has currently targetted, if any.</li>
+      </ul>
+
+      <h3 id="warp-all">Warp All</h3>
+      <p>
+        The <strong>Warp All</strong> toggle allows any warp function to simultaneously warp every attached character that is in the active character's
+        zone with a single command.
+      </p>
+      <ul>
+        <li>Filters by zone - only same-zone characters get warped.</li>
+        <li>Honors the <strong>Warp Group</strong> opt-in list in <a href="#other">Other</a>: any unchecked character is skipped.</li>
+      </ul>
+
+      <h3 id="warp-guard-banner">Warp Guard</h3>
+      <p>
+        When the <a href="#other">warp guard</a> blocks a warp (because an
+        untrusted player is within ~50 yalms of the warping character), an
+        amber <strong>WARP BLOCKED</strong> banner appears temporarily at the top of the
+        tab listing which character was blocked.
+      </p>
+    </section>
+
+    <!-- ── MAP ───────────────────────────────────────────────────────────── -->
+    <section id="map" class="feature-section">
+      <h2>Map</h2>
+      <p class="feature-lede">
+        Zone map with live overlays for player position, surrounding entities,
+        saved warp points, and tracking guide-lines.
+      </p>
+
+      <figure class="feature-figure">
+        <img src="images/map-tab.png" alt="LesserEvil Map tab showing the zone map with player position, entity overlays, and bottom bar">
+        <figcaption>An example of the main MAP UI.</figcaption>
+      </figure>
+
+      <h3 id="map-navigation">Navigation</h3>
+      <dl>
+        <dt>Zoom</dt>
+        <dd>Use the mouse wheel to zoom in/out 0.25 increments up to 4&times;.</dd>
+        <dt>Pan</dt>
+        <dd>Click and drag on the map to pan when zoomed in.</dd>
+        <dt>Click to warp</dt>
+        <dd>Click on a position on the map to warp your character to the location after a confirmation prompt.</dd>
+        <p class="note">
+         Because the map overlay is a 2D image, height-based positioning is inconsistent when warping this way. 
+         
+         If you choose to use this function, you may warp under the ground for example. 
+         <br />
+         <br />
+         Please exercise caution when using this.
+        </p>
+      </dl>
+
+      <h3 id="map-overlays">Live Overlays</h3>
+      <p><strong>Player</strong> - a rotating arrow showing your current position and facing direction.</p>
+      <p><strong>Player Coordinates</strong> - top-left badge shows your in-game grid position on the map (e.g. <code>F-8</code>).</p>
+      <p><strong>Radar Circle</strong> - a faint dashed ring marks the ~50-yalm entity-detection bubble around your character - the limit of where live entity data is available.</p>
+      <p><strong>Entity Icons</strong> - Each entity renders as a small colored dot. Hover any dot for a panel showing its name, type, HP, claim status, and distance.</p>
+      <ul class="legend">
+        <li><span class="swatch" style="background:#22C55E"></span><strong>PC</strong></li>
+        <li><span class="swatch" style="background:#EF4444"></span><strong>MOB</strong></li>
+        <li><span class="swatch" style="background:#3B82F6"></span><strong>NPC</strong></li>
+        <li><span class="swatch diamond" style="background:#F97316"></span><strong>Warp Point</strong></li>      
+      </ul>
+      <p class="note">
+        Toggle visibility for each type in the bottom bar.
+      </p>
+
+      <h3 id="map-spawn-dots">Floor Selector</h3>
+      <p>Multi-floor zones (Sortie, Limbus, etc.) auto-switch the displayed floor based on your character's vertical position.</p>
+      <p>The strip on the right shows thumbnails of every floor; clicking on one temporarily sets the view to that floor.</p>
+
+      <h3 id="map-warp-points">Warp Points</h3>
+      <p>Saved warp points for the current zone are plotted on the map overlay, with the following functions:</p>
+      <ul>
+        <li><strong>Left-click a warp point</strong> - warps to its exact saved coordinates.</li>
+        <li><strong>Hover a warp point</strong> - shows the name in the bottom-right info panel.</li>
+        <li><strong>WARP</strong> checkbox in the bottom bar toggles warp point visibility on the map.</li>
+      </ul>
+      <p>
+        Same underlying data as the <a href="#warp">Warp</a> tab's POINT-mode
+        dropdown.
+      </p>
+
+      <h4 id="map-save-position">Saving Warp Points</h4>
+      <p>
+        The <strong>SAVE WARP POINT</strong> button in the bottom bar captures
+        your character's current position and saves it as a
+        new warp point. After defining a name for the point, the new point will appear
+        as an orange diamond on the map immediately.
+      </p>
+
+      <h3 id="map-tracking-viz">Tracking</h3>
+      <p>When entities are tracked from the SCAN tab, each one renders on the map with a colored guide-line to its location.</p>
+
+      <figure class="feature-figure">
+        <img src="images/map-tracking-line.png" alt="LesserEvil map with a colored guide-line drawn from the player to a tracked entity, plus the tracking HUD">
+        <figcaption>Tracking an entity will draw a line towards it on the map.</figcaption>
+      </figure>
+      <ul>
+        <li>The line updates in real-time when the entity is in your memory range (50y).</li>
+        <li>When outside 50y, it falls back to the last scan result, refreshed every 60 seconds.</li>
+        <li>Top-right HUD lists every tracked entity with status, distance, and a color swatch.</li>
+        <li>Clicking a tracked entity on the map allows you to warp directly to its position.</li>
+      </ul>
+      <p>Full tracking workflow can be found in <a href="#scan">Scan &amp; Track</a>.</p>
+
+      <h3 id="map-popouts">Pop-out Maps</h3>
+      <p>
+        Click the <strong>&#8599;</strong> icon in the bottom right of the MAP section to
+        open a new resizable window bound to the current character.
+      </p>
+
+      <figure class="feature-figure">
+        <img src="images/map-popout-context.png" alt="LesserEvil pop-out map window with the right-click context menu open">
+        <figcaption>An example of a Popout Map with Right Click context menu.</figcaption>
+      </figure>
+
+      <h3 id="map-bottom-bar">Bottom Bar Reference</h3>
+      <ul>
+        <li><strong>PC / MOB / NPC / WARP</strong> - visibility checkboxes.</li>
+        <li><strong>SAVE WARP POINT</strong> - captures your full coordinates and saves them as a named warp point on this zone's map.</li>
+        <li><strong>Warp All</strong> - applies the next warp to every attached character in the active character's zone (same rule as the WARP tab's ALL toggle).</li>
+        <li><strong>&#8599;</strong> - open an independent pop-out map for the current character.</li>
+      </ul>
+    </section>
+
+    <!-- ── SCAN & TRACK ──────────────────────────────────────────────────── -->
+    <section id="scan" class="feature-section">
+      <h2>Scan &amp; Track</h2>
+      <p class="feature-lede">
+        Inspect every entity in a zone, scan for and warp to an entity on
+        demand, and track entities across the map.
+      </p>
+
+      <figure class="feature-figure">
+        <img src="images/scan-tab.png" alt="LesserEvil Scan tab showing the zone scan dropdown, entity list, note box, and SCAN/TRACK/WARP buttons">
+        <figcaption>An example of the SCAN UI used for locating and warping to entities.</figcaption>
+      </figure>
+
+      <h3 id="scan-addon">Addon Requirements</h3>
+      <p>
+        The SCAN tab requires the <code>LesserEvil</code> Windower addon to be
+        loaded to function. The connection state is shown when first navigating to the tab:
+      </p>
+      <ul>
+        <li><strong>LOAD ADDON</strong> - sends <code>//lua load LesserEvil</code> to the focused character.</li>
+        <li><strong>CHECK CONNECTIVITY</strong> - re-pings the addon to verify the connection if the addon is already loaded.</li>
+      </ul>
+      <p>You can also enable <em>Load Windower Addon On Startup</em> in <a href="#other">Other</a> to auto-load on every attach.</p>
+
+      <h3 id="scan-zone">Zone Scan</h3>
+      <p>Pick a zone from the dropdown to load every named entity slot. The current zone is highlighted by the badge to the right.</p>
+      <ul>
+        <li><strong>CURRENT ZONE</strong> - jumps the dropdown back to your character's zone.</li>
+        <li><strong>Filter box</strong> - fuzzy search the entity list by name.</li>
+        <li><strong>Entity List</strong> - each row shows the name and ID of the entity, with optional user notes on the right.</li>
+        <li><strong>Double-click a row</strong> - issues a SCAN for that entity.</li>
+        <li><strong>Optional Zone Inspector</strong> - selecting zones other than the user's current zone allows users to view entity lists for other zones.
+        <p class="note">When viewing a zone other than the player's current zone, SCAN & TRACK functions are disabled.</p>
+        </li>
+      </ul>
+
+      <h3 id="scan-buttons">Actions</h3>
+      <dl>
+        <dt>SCAN</dt>
+        <dd>Sends a request for the selected entity's position data. The result panel shows coordinates if found or "Unable to locate entity" when the entity could not be found.</dd>
+        <dt>TRACK / UNTRACK</dt>
+        <dd>Adds or removes the selected entity from the tracking set. The button label flips based on whether the row is currently being tracked.</dd>
+        <dt>WARP</dt>
+        <dd>Warps to the entity's last scan result. If no scan has happened yet, it scans first then warps automatically.</dd>
+      </dl>
+
+      <h3 id="scan-notes">Entity Notes</h3>
+      <p>
+        Each entity can have a user defined note attached to it. Select a row, type
+        in the note box, click <strong>SAVE NOTE</strong>. 
+        <br />
+        <br />
+        Saved notes are displayed to the right of an entity on the list.
+      </p>
+
+      <h3 id="scan-tracking">Tracking</h3>
+      <p>Tracking periodically scans for an entity's coordinates and displays them on the <a href="#map">Map</a> tab when found.</p>
+      <dl>
+        <dt>Multiple Target Support</dt>
+        <dd>Track as many entities as you want at once.</dd>
+        <dt>Multiple Character Support</dt>
+        <dd>Each tracked target is owned by the character that started it. Each character's map only shows its own targets, and scans are routed via the owning character.</dd>
+        <dt>Notification banner</dt>
+        <dd>An emerald banner appears at the top of the SCAN tab when any entity is tracked, listing the count or single name and a STOP button to clear all of your character's tracks.</dd>
+        <dt>List highlighting</dt>
+        <dd>Tracked entities in the entity list are prefixed with <code>&gt;&gt;</code> so they're easy to find. Only your own tracks show the prefix.</dd>
+        <dt>Map HUD</dt>
+        <dd>Top-right of the map lists every tracked entity with a color swatch matching its line, the name, status (Live / Found / Searching&hellip;), and current distance.</dd>
+      </dl>
+    </section>
+
+    <!-- ── ACTIONS & HOTKEYS ─────────────────────────────────────────────── -->
+    <section id="actions" class="feature-section">
+      <h2>Actions &amp; Hotkeys</h2>
+      <p class="feature-lede">
+        Create actions that range from LesserEvil native features to chat inputs and windower commands ingame. Bind a keyboard shortcut to a sequence of actions.
+      </p>
+
+      <figure class="feature-figure">
+        <img src="images/action-tab.png" alt="LesserEvil Action tab showing the saved actions list and a running action sequence with step progress">
+        <figcaption>The main Action/Hotkey UI with an example Action Sequence running.</figcaption>
+      </figure>
+
+      <h3 id="actions-basics">Action Basics</h3>
+      <p>Actions are simple inputs that can be composed and saved within LesserEvil. Most LesserEvil features can be made into actions, and actions can be chained to create sequences.</p>
+
+      <h3 id="actions-primitives">Available Actions</h3>
+
+      <figure class="feature-figure">
+        <img src="images/action-editor.png" alt="LesserEvil Action Editor window showing an action, a multi-step sequence, and the save-as-action fields">
+        <figcaption>The Action Editor with an example action sequence.</figcaption>
+      </figure>
+
+      <h4>Point Warp</h4>
+      <ul>
+        <li><strong>Warp To Saved Point</strong> - pick from the saved-points list. Optionally zone-agnostic (matches the same point name in any zone).</li>
+        <li><strong>Warp To Coordinates</strong> - type X / Y / Z directly.</li>
+        <li><strong>Warp All Characters To Current</strong> - sync everyone to your current position.</li>
+        <li><strong>Warp All Characters To Specific</strong> - sync everyone to a named character's position.</li>
+        <li><strong>Return To Pre-Warp Position</strong> - bounce back to where you were before the most recent warp.</li>
+        <li><strong>Save Position</strong> - bookmark current position to an in-memory slot.</li>
+      </ul>
+
+      <h4>Entity Warp</h4>
+      <ul>
+        <li><strong>Warp To Current Target</strong> - your in-game cursor target.</li>
+        <li><strong>Warp To Nearest PC / NPC / Monster</strong> - closest entity matching the type filter.</li>
+        <li><strong>Warp To Player</strong> - pick another attached character; warps to wherever they are right now.</li>
+      </ul>
+
+      <h4>Speed</h4>
+      <ul>
+        <li><strong>Toggle Speed On/Off</strong></li>
+        <li><strong>Set Speed</strong> - sets the boost percent.</li>
+        <li><strong>Toggle Smart Speed On/Off</strong></li>
+        <li><strong>Set Smart Speed</strong> - sets the smart-speed boost percent.</li>
+      </ul>
+
+      <h4>Visibility</h4>
+      <ul>
+        <li><strong>Toggle Players On/Off</strong></li>
+        <li><strong>Toggle NPCs On/Off</strong></li>
+        <li><strong>Toggle Monsters On/Off</strong></li>
+      </ul>
+
+      <h4>Flags &amp; status</h4>
+      <ul>
+        <li><strong>Toggle None / Maintenance / GM Flag</strong></li>
+        <li><strong>Toggle None / Maintenance / GM Status</strong></li>
+      </ul>
+
+      <h4>Profile</h4>
+      <ul>
+        <li><strong>Load &amp; Activate</strong> - picks a saved profile and applies it.</li>
+        <li><strong>Toggle Profile On/Off</strong> - turns the active profile off (or back on).</li>
+      </ul>
+
+      <h4>Chat</h4>
+      <ul>
+        <li><strong>Send Message To Current</strong> - sends from the focused character.</li>
+        <li><strong>Send Message To All</strong> - sends from every attached character.</li>
+        <li><strong>Send Message To Specific</strong> - sends from a named character.</li>
+      </ul>
+
+      <h4>Position Nudge</h4>
+      <p>Move a fixed step in any of 8 compass directions plus Up / Down. Each can use the <em>WARP ALL</em> flag to nudge every same-zone character at once.</p>
+
+      <h3 id="actions-steps">Per-step options</h3>
+      <p>Every step in the sequence can be tuned independently:</p>
+      <ul>
+        <li><strong>Delay before</strong> (ms) - wait this long before firing.</li>
+        <li><strong>Repeat count</strong> - fire N times.</li>
+        <li><strong>Repeat delay</strong> (ms) - pause between iterations.</li>
+      </ul>
+      <p>Use these to build cast &rarr; wait &rarr; cast &rarr; wait &rarr; warp chains.</p>
+
+      <h3 id="actions-saved">Using Actions</h3>
+      <p>
+        Actions and sequences can be saved with a name and replayed later through the following ways:
+      </p>      
+      <ul>
+        <li><strong>By LesserEvil UI</strong> - select a saved Action from the list and hit RUN.</li>
+        <li><strong>By Hotkey</strong> - bind an action to a hotkey and execute it from there.</li>
+        <li><strong>By Windower Addon</strong> - register an alias for an action through the LesserEvil windower addon and initiate it through the windower command.</li>
+      </ul>
+      <p class="note">Registering and executing actions through the Windower addon requires the <code>LesserEvil</code> Windower addon to be loaded on the respective character.</p>
+
+      <h3 id="actions-anatomy">Hotkey Basics</h3>
+      <p>Actions can be assigned to Hotkeys for easier access and execution.</p>
+      <ul>
+        <li><strong>Multi-Key Combo Support</strong> - captured by clicking the key-capture box and pressing the keys.</li>
+        <li><strong>Profile Scoping</strong> - optional profile scope; the hotkey only fires while that profile is loaded on the focused character.</li>
+        <li><strong>Action Sequence Support</strong> - single actions or actions sequences can be assigned to hotkeys.</li>
+      </ul>
+
+      <h3 id="actions-scope">Hotkey Scope</h3>
+      <p>
+        Hotkeys are global (the keyboard hook fires whether FFXI or another app
+        is focused). Scoping them to a profile lets you have different bindings
+        per character setup - e.g. a "Hunt" profile triggers tracking actions,
+        a "Crafting" profile triggers warp-to-mog-house actions.
+      </p>
+    </section>
+
+    <!-- ── OTHER ─────────────────────────────────────────────────────────── -->
+    <section id="other" class="feature-section">
+      <h2>Other</h2>
+      <p class="feature-lede">
+        Global settings: display, behavior, warp guard, warp group, FFXI install
+        path, and language.
+      </p>
+
+      <figure class="feature-figure">
+        <img src="images/other-tab.png" alt="LesserEvil Other tab showing Display & Behavior options and the Warp Guard section">
+        <figcaption>The Other settings, used for various configs.</figcaption>
+      </figure>
+
+      <h3 id="other-display">Display &amp; Behavior</h3>
+      <dl>
+        <dt>Always On Top</dt>
+        <dd>Keeps the LesserEvil window above all others applications.</dd>
+        <dt>Make Luopans Untargetable</dt>
+        <dd>Disables targetting for Geomancer luopans.</dd>
+        <dt>Load Windower Addon On Startup</dt>
+        <dd>When a new FFXI client attaches, automatically issues <code>//lua load LesserEvil</code> on it so the addon connects without manual intervention.</dd>
+        <dt>Reduce CPU Usage</dt>
+        <dd>Slows the per-character monitoring loop from ~500 ms to ~1 s and pauses background polling when the LesserEvil window isn't focused.</dd>
+        <dt>Keep Profiles On While Zoning</dt>
+        <dd>By default, the active profile is deactivated when any included character changes zones (a safety measure). Enable to keep profiles applied across zones.</dd>
+        <dt>Auto-Switch Character On Window Focus</dt>
+        <dd>Switches the focused character automatically when you focus a different FFXI game window.</dd>
+        <dt>Transparency</dt>
+        <dd>Sliders the LesserEvil window opacity from fully opaque down to translucent.</dd>
+        <dt>Zone Delay</dt>
+        <dd>Cooldown (ms) between successive zone-related actions.</dd>
+      </dl>
+
+      <h3 id="other-warp-guard">Warp Guard</h3>
+      <p>
+        Guards every warp the app can issue depending on players nearby. When enabled (on by default), warps are blocked if a non-trusted player
+        is within ~50 yalms of the warping character. Your own attached
+        characters are always trusted - the whitelist is only for additional
+        names you want to treat as safe.
+      </p>
+      <ul>
+        <li><strong>Prevent Warping If Players Nearby</strong> - master toggle. Default: on.</li>
+        <li><strong>Whitelist</strong> - case-insensitive list of additional trusted names. Type a name + Enter (or ADD); double-click a row or press Delete to remove.</li>
+      </ul>
+      <p>
+        Triggered guards display a <strong>WARP BLOCKED</strong> banner on
+        whichever tab the warp came from (WARP, MAP, MAIN's compact warp).
+        The banner names the blocked character and auto-dismisses after a few
+        seconds.
+      </p>
+      <p class="note">
+        Applies to every warp path: POINT/PLAYER warps, click-to-warp on the
+        map, scan-result jumps, hotkey-bound warp actions, and addon-issued
+        warps.
+      </p>
+
+      <h3 id="other-warp-group">Warp Group</h3>
+      <p>
+        Per-character opt-in for "Warp All" operations. Every attached
+        character is listed by default; uncheck a name to exclude that character from
+        group warps issued by:
+      </p>
+      <ul>
+        <li>The <strong>ALL</strong> toggle on the WARP tab.</li>
+        <li>The <strong>Warp All Characters</strong> checkbox on the <a href="#map">Map</a> tab.</li>
+        <li>Warp-related actions (see <a href="#actions">Actions &amp; Hotkeys</a>).</li>
+      </ul>
+
+      <h3 id="other-ffxi">FFXI installation</h3>
+      <p>
+        LesserEvil reads zone DAT files for the entity-name lookup used by Zone
+        Scan. The install path auto-detects from the registry; the
+        <strong>Resolved path</strong> field shows what's currently in use.
+      </p>
+      <ul>
+        <li><strong>BROWSE&hellip;</strong> - manually pick the FFXI install folder when the registry detection fails (e.g. install on a non-default drive).</li>
+        <li><strong>USE AUTO-DETECT</strong> - clear a manual override and fall back to the registry-detected path.</li>
+      </ul>
+      <p class="note">
+        Status text below the path explains the current state:
+        <em>Auto-detected from registry</em>, <em>Using manual override</em>, or
+        <em>FFXI install not auto-detected - click Browse to set it manually</em>.
+      </p>
+
+      <h3 id="other-language">Language</h3>
+      <p>
+        Switch between <strong>English</strong> and <strong>&#26085;&#26412;&#35486;</strong>
+        at runtime; the change applies immediately.
+      </p>
+      <p class="note">Translations are currently pending. If you would like to contribute, please contact me.</p>
+
+      <h3 id="other-storage">Where Settings Live</h3>
+      <p>All settings persist under the app's <code>config/</code> folder:</p>
+      <ul>
+        <li><code>global.json</code> - display &amp; behavior, warp guard toggle + whitelist, FFXI override.</li>
+        <li><code>profiles.json</code> - saved profiles.</li>
+        <li><code>hotkeys.json</code> - hotkey definitions.</li>
+        <li><code>warpgroup.json</code> - per-character warp opt-ins.</li>
+        <li><code>saved.points.json</code> - saved warp points.</li>
+      </ul>
+    </section>
+
+  </main>
+
+</div>
+
+</body>
+</html>

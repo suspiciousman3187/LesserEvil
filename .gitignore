@@ -1,0 +1,30 @@
+# This repo holds the documentation site (served via GitHub Pages from
+# /docs) and project README. The compiled application is distributed via
+# GitHub Releases, NOT committed here — keep the binary payload out so
+# the repo stays small.
+
+# ── Application binaries / runtime payload ──────────────────────────────
+LesserEvil.exe
+LesserEvil.exe.config
+*.dll
+/Resources/
+/plugins/
+/config/
+/maps/
+/Windower/
+
+# ── Build artifacts ─────────────────────────────────────────────────────
+[Bb]in/
+[Oo]bj/
+*.pdb
+*.user
+
+# ── OS / editor noise ───────────────────────────────────────────────────
+Thumbs.db
+desktop.ini
+.DS_Store
+.vs/
+.idea/
+
+# ── Backups ─────────────────────────────────────────────────────────────
+*.bak

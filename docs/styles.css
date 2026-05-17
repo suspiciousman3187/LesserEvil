@@ -1,0 +1,762 @@
+/* LesserEvil documentation site — dark theme matching the app */
+
+:root {
+    --bg:        #0F0F11;
+    --bg-card:   #1B1B1F;
+    --bg-hero:   #18181B;
+    --bg-nav:    #14141700;
+    --border:    #2A2A30;
+    --border-hi: #3F3F46;
+    --text:      #E4E4E7;
+    --text-mute: #C0C0C9;   /* lifted from #A1A1AA for legibility over the bg art */
+    --text-dim:  #71717A;
+    --accent:    #A52C2C;       /* LE's red */
+    --accent-hi: #C44545;
+    --code-bg:   #1F1F23;
+    --code-fg:   #FCD34D;
+    --donate:    #EC4899;       /* pink-500 */
+    --donate-hi: #F472B6;
+
+    /* Background overlay art. The single knob below controls how visible
+       it is — bump toward ~0.18 for prominent, drop to 0 to disable
+       entirely (the layer then renders nothing). */
+    --bg-overlay-opacity: 0.08;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+                 Oxygen, Ubuntu, sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+/* Fixed, dimmed background art behind everything. Sits above the solid
+   body color but below all content (z-index:-1), never intercepts
+   clicks (pointer-events:none), and stays put while the page scrolls.
+   Slight desaturation keeps the busy illustration from fighting the
+   text. Shared stylesheet, so this applies to every page at once. */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background: url('bg-overlay.jpg') center / cover no-repeat;
+    opacity: var(--bg-overlay-opacity);
+    filter: grayscale(25%);
+}
+
+.container {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* ─── Top navigation (shared across all pages) ───────────────────── */
+
+.topbar {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(15, 15, 17, 0.92);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+}
+
+.topbar .container {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+.brand {
+    color: var(--accent-hi);
+    font-weight: 800;
+    letter-spacing: 0.16em;
+    font-size: 13px;
+    text-decoration: none;
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.brand:hover { color: var(--accent); }
+
+.brand-icon {
+    width: 32px;
+    height: 32px;
+    /* High-res transparent PNG (256px source) downscaled — let the
+       browser smooth it instead of the old crisp-edges, which was
+       only there to cope with upscaling a tiny .ico frame. */
+    image-rendering: auto;
+}
+
+.topbar nav {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    flex-wrap: wrap;
+    margin-left: auto;
+}
+
+.topbar nav a {
+    color: var(--text-mute);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 6px 10px;
+    border-radius: 5px;
+}
+
+.topbar nav a:hover {
+    color: var(--text);
+    background: rgba(255,255,255,0.04);
+}
+
+.topbar nav a.active {
+    color: var(--text);
+    background: rgba(165, 44, 44, 0.18);
+}
+
+.donate-btn {
+    background: transparent !important;
+    color: var(--donate) !important;
+    font-weight: 600 !important;
+    margin-left: 8px;
+    border: 1px solid var(--donate) !important;
+    padding: 5px 10px !important;
+    transition: background 120ms, color 120ms;
+}
+
+.donate-btn:hover {
+    background: rgba(236, 72, 153, 0.12) !important;
+    color: var(--donate-hi) !important;
+}
+
+/* ─── Download card ──────────────────────────────────────────────── */
+
+.download-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 20px 22px;
+    max-width: 560px;
+}
+
+.download-head {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 10px;
+}
+
+.version-badge {
+    display: inline-block;
+    background: rgba(165, 44, 44, 0.18);
+    color: var(--accent-hi);
+    border: 1px solid rgba(165, 44, 44, 0.5);
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    padding: 3px 10px;
+    border-radius: 999px;
+}
+
+.download-sub {
+    color: var(--text-dim);
+    font-size: 13px;
+}
+
+.download-card p { margin: 0 0 16px; }
+
+.btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--accent);
+    color: #fff;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+    padding: 11px 20px;
+    border-radius: 6px;
+    transition: background 120ms, transform 120ms;
+}
+
+.btn-primary:hover {
+    background: var(--accent-hi);
+    transform: translateY(-1px);
+}
+
+.repo-link {
+    margin: 14px 0 0 !important;
+    font-size: 13px;
+    color: var(--text-dim);
+}
+
+/* ─── Hero (index only) ──────────────────────────────────────────── */
+
+.hero {
+    /* Translucent so the background art shows through instead of being
+       hidden by a solid slab. Two layers:
+       1) a soft LE-red glow up top — a "spotlight" that keeps the title
+          emphasized;
+       2) a vertical scrim that's darkest behind the heading (for
+          legibility) and fades to fully transparent at the bottom so the
+          hero blends seamlessly into the page over the overlay. */
+    background:
+        radial-gradient(1100px 380px at 50% -12%,
+            rgba(165, 44, 44, 0.28), transparent 70%),
+        linear-gradient(180deg,
+            rgba(15, 15, 17, 0.88) 0%,
+            rgba(15, 15, 17, 0.55) 55%,
+            rgba(15, 15, 17, 0) 100%);
+    border-bottom: 1px solid rgba(63, 63, 70, 0.4);
+    padding: 64px 0 48px;
+}
+
+.hero h1 {
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1.15;
+    margin: 0 0 16px;
+    color: #F4F4F5;
+    /* Keeps the title crisp if any background art peeks through. */
+    text-shadow: 0 2px 14px rgba(0, 0, 0, 0.55);
+}
+
+.hero .lede {
+    font-size: 17px;
+    color: var(--text-mute);
+    max-width: 720px;
+    margin: 0 0 28px;
+    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* ─── Page header (non-index pages) ──────────────────────────────── */
+
+.page-header {
+    border-bottom: 1px solid var(--border);
+    padding: 36px 0 24px;
+}
+
+.page-header h1 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #F4F4F5;
+    margin: 0 0 8px;
+}
+
+.page-header .lede {
+    font-size: 15px;
+    color: var(--text-mute);
+    margin: 0;
+    max-width: 720px;
+}
+
+/* ─── Sections ───────────────────────────────────────────────────── */
+
+main {
+    padding-top: 0;
+    padding-bottom: 60px;
+}
+
+section {
+    padding: 32px 0 12px;
+    border-bottom: 1px solid var(--border);
+}
+
+section:last-of-type {
+    border-bottom: none;
+}
+
+h2 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #F4F4F5;
+    margin: 0 0 14px;
+    scroll-margin-top: 80px;
+}
+
+h2::before {
+    content: '';
+    display: inline-block;
+    width: 4px;
+    height: 20px;
+    background: var(--accent);
+    border-radius: 2px;
+    vertical-align: middle;
+    margin-right: 10px;
+    transform: translateY(-2px);
+}
+
+h3 {
+    font-size: 16px;
+    font-weight: 700;
+    color: #F4F4F5;
+    margin: 0 0 8px;
+}
+
+p { margin: 0 0 14px; color: var(--text-mute); }
+p strong, li strong { color: var(--text); }
+p em, li em { color: var(--text-dim); font-style: italic; }
+
+/* Subtle legibility halo: keeps body copy crisp where the background
+   art shows through, without an opaque panel. Barely perceptible on
+   flat dark areas, just enough contrast lift over the overlay. */
+p, li, dd, dt, .lede {
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.85);
+}
+
+p.note {
+    border-left: 3px solid var(--accent);
+    background: rgba(165, 44, 44, 0.08);
+    padding: 10px 14px;
+    border-radius: 0 6px 6px 0;
+    color: var(--text);
+    font-size: 14px;
+}
+
+ul, ol {
+    margin: 0 0 14px;
+    padding-left: 22px;
+    color: var(--text-mute);
+}
+
+li { margin-bottom: 6px; }
+
+a { color: var(--accent-hi); }
+a:hover { color: var(--accent); }
+
+code {
+    font-family: 'Consolas', 'Menlo', monospace;
+    font-size: 13px;
+    background: var(--code-bg);
+    color: var(--code-fg);
+    padding: 1px 6px;
+    border-radius: 3px;
+    border: 1px solid var(--border);
+}
+
+/* ─── Definition list (term + description) ──────────────────────── */
+
+.feature-section dl {
+    margin: 14px 0 22px;
+    padding: 0;
+}
+
+.feature-section dt {
+    color: var(--accent-hi);
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-top: 14px;
+    margin-bottom: 4px;
+}
+
+.feature-section dt:first-child {
+    margin-top: 4px;
+}
+
+.feature-section dd {
+    margin: 0 0 0 0;
+    padding: 0;
+    color: var(--text-mute);
+    font-size: 14px;
+    line-height: 1.55;
+    max-width: 720px;
+}
+
+.feature-section dd + dt {
+    border-top: 1px solid var(--border);
+    padding-top: 14px;
+}
+
+/* ─── Sticky-sidebar TOC: nested sub-items ───────────────────────── */
+
+.toc-nav ul ul {
+    margin-top: 2px;
+    margin-bottom: 6px;
+    padding-left: 14px;
+    border-left: 1px solid var(--border);
+}
+
+.toc-nav ul ul a {
+    font-size: 12px;
+    padding: 4px 8px;
+    color: var(--text-dim);
+}
+
+.toc-nav ul ul a:hover {
+    color: var(--text-mute);
+}
+
+.toc-nav ul ul a.active {
+    color: var(--text);
+    background: rgba(165, 44, 44, 0.10);
+    border-left-color: var(--accent-hi);
+}
+
+/* Third-level nesting (sub-subsection under a subsection). */
+.toc-nav ul ul ul {
+    margin-top: 1px;
+    margin-bottom: 4px;
+    padding-left: 12px;
+    border-left: 1px solid var(--border);
+}
+
+.toc-nav ul ul ul a {
+    font-size: 11px;
+    padding: 3px 8px;
+    color: var(--text-dim);
+}
+
+.toc-nav ul ul ul a:hover {
+    color: var(--text-mute);
+}
+
+/* ─── Feature card grid (legacy; kept for legend swatches etc.) ──── */
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 12px;
+    margin: 18px 0 22px;
+}
+
+.card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 14px 16px;
+}
+
+.card h3 {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--accent-hi);
+    margin-bottom: 6px;
+}
+
+.card p {
+    margin: 0;
+    font-size: 13.5px;
+    color: var(--text-mute);
+    line-height: 1.5;
+}
+
+/* ─── Legend swatches ────────────────────────────────────────────── */
+
+.legend {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 14px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 22px;
+}
+
+.legend li {
+    display: inline-flex;
+    align-items: center;
+    color: var(--text);
+    font-size: 14px;
+    margin: 0;
+}
+
+.swatch {
+    display: inline-block;
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    margin-right: 8px;
+    border: 1px solid rgba(0,0,0,0.6);
+}
+
+.swatch.diamond {
+    border-radius: 0;
+    transform: rotate(45deg);
+}
+
+.legend-pill {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-left: 6px;
+}
+
+/* ─── Multi-column list ──────────────────────────────────────────── */
+
+.grid-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 4px 22px;
+    list-style: disc;
+}
+
+/* ─── Docs page (sticky-sidebar layout for /features.html) ──────── */
+
+.docs-layout {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    gap: 32px;
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.toc-nav {
+    position: sticky;
+    top: 64px;
+    align-self: start;
+    max-height: calc(100vh - 80px);
+    overflow-y: auto;
+    padding: 28px 16px 28px 0;
+    border-right: 1px solid var(--border);
+}
+
+.toc-nav h3 {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-dim);
+    margin: 0 0 12px;
+    padding: 0 10px;
+}
+
+.toc-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.toc-nav li { margin-bottom: 2px; }
+
+.toc-nav a {
+    display: block;
+    padding: 7px 10px;
+    border-radius: 4px;
+    color: var(--text-mute);
+    font-size: 13px;
+    text-decoration: none;
+    border-left: 2px solid transparent;
+    transition: background 100ms, color 100ms, border-color 100ms;
+}
+
+.toc-nav a:hover {
+    color: var(--text);
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.toc-nav a.active {
+    color: var(--text);
+    background: rgba(165, 44, 44, 0.15);
+    border-left-color: var(--accent);
+}
+
+.docs-content {
+    min-width: 0;
+    padding: 0 0 60px;
+}
+
+.feature-section {
+    padding-top: 48px;
+    border-bottom: 1px solid var(--border);
+    scroll-margin-top: 70px;
+}
+
+.feature-section:first-child { padding-top: 16px; }
+.feature-section:last-child  { border-bottom: none; }
+
+.feature-section > h2 {
+    font-size: 26px;
+    margin: 0 0 6px;
+    scroll-margin-top: 70px;
+}
+
+.feature-section > h2::before {
+    width: 5px;
+    height: 24px;
+}
+
+.feature-section .feature-lede {
+    font-size: 15px;
+    color: var(--text-mute);
+    margin: 0 0 22px;
+    max-width: 720px;
+}
+
+.feature-section h3 {
+    font-size: 15px;
+    margin-top: 22px;
+}
+
+.feature-section .card h3 { margin-top: 0; }
+
+@media (max-width: 900px) {
+    .docs-layout {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+    .toc-nav {
+        position: static;
+        max-height: none;
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+        padding: 14px 0;
+        margin-bottom: 8px;
+    }
+    .toc-nav h3 { padding: 0 4px; margin-bottom: 8px; }
+    .toc-nav ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 4px;
+    }
+    .toc-nav a {
+        padding: 5px 10px;
+        font-size: 12px;
+    }
+    .toc-nav a.active {
+        border-left: none;
+        border-bottom: 2px solid var(--accent);
+        background: rgba(165, 44, 44, 0.15);
+    }
+    .feature-section { padding-top: 32px; }
+    .feature-section > h2 { font-size: 22px; }
+}
+
+/* ─── Quick-links grid (home page) ───────────────────────────────── */
+
+.quick-links {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 12px;
+    margin: 24px 0;
+    list-style: none;
+    padding: 0;
+}
+
+.quick-links li { margin: 0; }
+
+.quick-links a {
+    display: block;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 16px 18px;
+    text-decoration: none;
+    color: var(--text);
+    transition: border-color 120ms;
+}
+
+.quick-links a:hover {
+    border-color: var(--accent);
+}
+
+.quick-links .ql-title {
+    color: var(--accent-hi);
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 4px;
+}
+
+.quick-links .ql-text {
+    color: var(--text-mute);
+    font-size: 13.5px;
+}
+
+/* ─── Footer ─────────────────────────────────────────────────────── */
+
+footer {
+    border-top: 1px solid var(--border);
+    margin-top: 40px;
+    padding: 22px 0;
+}
+
+footer p {
+    margin: 0;
+    font-size: 12px;
+    color: var(--text-dim);
+}
+
+/* ─── Contact form / details ─────────────────────────────────────── */
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px;
+    margin: 18px 0;
+}
+
+.contact-grid .card .label {
+    color: var(--text-dim);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 4px;
+}
+
+.contact-grid .card a {
+    word-break: break-all;
+}
+
+/* ─── Feature screenshots ────────────────────────────────────────── */
+
+.feature-figure {
+    margin: 20px 0 24px;
+    padding: 0;
+}
+
+.feature-figure img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+    border: 1px solid var(--border);
+    background: var(--bg-card);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.45);
+}
+
+.feature-figure figcaption {
+    margin-top: 10px;
+    color: var(--text-dim);
+    font-size: 13px;
+    font-style: italic;
+    text-align: center;
+}
+
+/* ─── Responsive ─────────────────────────────────────────────────── */
+
+@media (max-width: 760px) {
+    .topbar .container { gap: 8px; }
+    .topbar nav { gap: 2px; }
+    .topbar nav a { padding: 4px 8px; font-size: 12px; }
+    .donate-btn { margin-left: 4px; }
+}
+
+@media (max-width: 600px) {
+    .hero { padding: 40px 0 28px; }
+    .hero h1 { font-size: 26px; }
+    .hero .lede { font-size: 15px; }
+    .page-header { padding: 28px 0 18px; }
+    .page-header h1 { font-size: 22px; }
+    h2 { font-size: 20px; }
+    section { padding-top: 24px; }
+}

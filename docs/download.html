@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Download - LesserEvil</title>
+<link rel="icon" type="image/x-icon" href="IconNew.ico">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="container">
+    <a href="index.html" class="brand"><img src="brand-logo.png" alt="" class="brand-icon">LESSER EVIL</a>
+    <nav>
+      <a href="about.html">About</a>
+      <a href="download.html" class="active">Download</a>
+      <a href="features.html">Features</a>
+      <a href="https://ko-fi.com/lesserevil" class="donate-btn" target="_blank" rel="noopener">♥ Donate</a>
+    </nav>
+  </div>
+</header>
+
+<header class="page-header">
+  <div class="container">
+    <h1>Download</h1>
+    <p class="lede">
+      Download the LesserEvil app and LesserEvil addons on Github.
+    </p>
+  </div>
+</header>
+
+<main class="container">
+
+<section>
+  <h2>System Requirements</h2>
+  <ul>
+    <li>Windows 10 / 11</li>
+    <li>FFXI installed (any region)</li>
+    <li>[OPTIONAL] <a href="https://www.windower.net/" target="_blank" rel="noopener">Windower 4</a> LesserEvil addon loaded.</li>
+    <li>.NET Framework 4.6.1 runtime</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Download</h2>
+  <p class="note">
+    This application is experimental and there may be bugs. Please use at your own risk!
+  </p>
+  <br />
+  <div class="download-card">
+    <div class="download-head">
+      <span class="version-badge">v1.0</span>
+      <span class="download-sub">LesserEvil app + Windower addon</span>
+    </div>
+    <p>
+      Grab the latest release of the app & addon from GitHub below.
+    </p>
+    <a class="btn-primary"
+       href="https://github.com/suspiciousman3187/LesserEvil/releases/latest"
+       target="_blank" rel="noopener">Download latest release &#8599;</a>
+  </div>
+  <br />
+</section>
+
+<section>
+  <h2>Overview & Settings Files</h2>
+
+  <h3>File Structure</h3>
+  <dl>
+    <dt><code>LesserEvil.exe</code></dt>
+    <dd>The main desktop application.</dd>
+
+    <dt><code>LesserEvil/</code></dt>
+    <dd>Optional Windower companion addon. Required for some features.</dd>
+
+    <dt><code>maps/</code></dt>
+    <dd>Zone map image files used by the MAP tab.</dd>
+
+    <dt><code>config/</code></dt>
+    <dd>Persisted user settings, reference data, and runtime caches. Files in this folder are auto-created on first launch as needed; see breakdown below.</dd>
+  </dl>
+
+  <h3>User Settings Files</h3>
+  <p>App-wide and per-character configuration files.</p>
+  <dl>
+    <dt><code>global.json</code></dt>
+    <dd>App-wide settings: display &amp; behavior toggles, transparency, zone delay, language, FFXI install path override, and the Warp Guard toggle + whitelist.</dd>
+
+    <dt><code>player.settings.json</code></dt>
+    <dd>Per-character settings - speed enable/amount, Smart Speed config, visibility flags, etc.</dd>
+
+    <dt><code>profiles.json</code></dt>
+    <dd>Saved profiles for all characters.</dd>
+
+    <dt><code>hotkeys.json</code></dt>
+    <dd>Hotkey definitions and their bound action sequences.</dd>
+
+    <dt><code>warpgroup.json</code></dt>
+    <dd>Per-character opt-in list for "Warp All" operations.</dd>
+
+    <dt><code>saved.points.json</code></dt>
+    <dd>Saved warp points.</dd>
+
+    <dt><code>entity_notes.json</code></dt>
+    <dd>User notes attached to specific entities in the SCAN tab.</dd>
+  </dl>
+</section>
+
+</main>
+
+</body>
+</html>
