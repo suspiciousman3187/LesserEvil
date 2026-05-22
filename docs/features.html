@@ -79,6 +79,7 @@
             </ul>
           </li>
           <li><a href="#warp-all">Warp All</a></li>
+          <li><a href="#warp-cli">CLI Commands</a></li>
           <li><a href="#warp-guard-banner">Warp Guard</a></li>
         </ul>
       </li>
@@ -129,6 +130,12 @@
           <li><a href="#other-ffxi">FFXI installation</a></li>
           <li><a href="#other-language">Language</a></li>
           <li><a href="#other-storage">Where Settings Live</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#tako-legacy">Tako Legacy Features</a>
+        <ul>
+          <li><a href="#tako-legacy-pt">In-game //pt Commands</a></li>
         </ul>
       </li>
     </ul>
@@ -377,6 +384,50 @@
         <li>Filters by zone - only same-zone characters get warped.</li>
         <li>Honors the <strong>Warp Group</strong> opt-in list in <a href="#other">Other</a>: any unchecked character is skipped.</li>
       </ul>
+
+      <h3 id="warp-cli">CLI Commands</h3>
+      <p>
+        Warps can also be triggered straight from the FFXI chat box similar to the legacy Tako cli command <code>//pt goto</code>. 
+        A single <code>//le goto</code>
+        command warps to either your current target, a saved warp point, or another attached
+        character, gated to your current zone.
+      </p>
+      <table class="feature-table">
+        <thead>
+          <tr>
+            <th>Command</th>
+            <th>Behavior</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>//le goto &lt;warp point&gt;</code></td>
+            <td>Warp the current character to a saved warp point in your current zone. Multi-word names work as typed (e.g. <code>//le goto Boss Room</code>).</td>
+          </tr>
+          <tr>
+            <td><code>//le goto &lt;character name&gt;</code></td>
+            <td>Warp to another LesserEvil-attached character who is in your current zone.
+
+              If a name matches both an attached character and a saved point in your
+              zone, the character takes priority.
+            </td>
+            
+          </tr>
+          <tr>
+            <td><code>//le goto &lt;t&gt;</code></td>
+            <td>Warp to your current target's position.</td>
+          </tr>
+          <tr>
+            <td><code>//le goto &lt;target&gt; all</code></td>
+            <td>Append <code>all</code> to warp every attached character that is in the same zone to that destination (point, character, or target).</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="note">
+        <code>//le goto</code> works even without the <code>LesserEvil</code> Windower addon - the
+        command is read directly from the Windower console. Warps still respect
+        <a href="#other-warp-guard">Warp Guard</a>.
+      </p>
 
       <h3 id="warp-guard-banner">Warp Guard</h3>
       <p>
@@ -703,6 +754,10 @@
         <dd>By default, the active profile is deactivated when any included character changes zones (a safety measure). Enable to keep profiles applied across zones.</dd>
         <dt>Auto-Switch Character On Window Focus</dt>
         <dd>Switches the focused character automatically when you focus a different FFXI game window.</dd>
+        <dt>Remove JA Lock</dt>
+        <dd>Removes movement lock on using JA (JA0Wait).</dd>
+        <dt>Unlock All Maps Ingame</dt>
+        <dd>Allows you to view all maps using <code>/map</code> as if you had acquired them normally ingame.</dd>
         <dt>Transparency</dt>
         <dd>Sliders the LesserEvil window opacity from fully opaque down to translucent.</dd>
         <dt>Zone Delay</dt>
@@ -776,6 +831,74 @@
         <li><code>warpgroup.json</code> - per-character warp opt-ins.</li>
         <li><code>saved.points.json</code> - saved warp points.</li>
       </ul>
+    </section>
+
+    <!-- ── TAKO LEGACY FEATURES ──────────────────────────────────────── -->
+    <section id="tako-legacy" class="feature-section">
+      <h2>Legacy Tako CLI Commands</h2>
+      <p class="feature-lede">
+        Legacy Tako ingame commands. While these are still available in LesserEvil, they are no longer officially supported or updated. 
+      </p>
+      <p>
+        These commands are read straight from Windower's console input by the
+        desktop app, so they work on any attached character independently of the
+        <code>LesserEvil</code> Windower addon. All of them use the
+        <code>//pt</code> prefix.
+      </p>
+      <p class="note">
+        Most have a more user-friendly equivalent
+        in the <a href="#warp">Warp</a> and <a href="#actions">Actions &amp; Hotkeys</a>
+        tabs.
+      </p>
+
+      <table class="feature-table">
+        <thead>
+          <tr>
+            <th>Command</th>
+            <th>Behavior</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>//pt goto &lt;t&gt;</code></td>
+            <td>Warp to your current target's position.</td>
+          </tr>
+          <tr>
+            <td><code>//pt goto &lt;player-name&gt;</code></td>
+            <td>Warp to another LesserEvil-attached character (gated to the same zone).</td>
+          </tr>
+          <tr>
+            <td><code>//pt goto &lt;entity-name&gt;</code></td>
+            <td>Fuzzy-match an entity in the current zone by name (case-insensitive).</td>
+          </tr>
+          <tr>
+            <td><code>//pt setpos &lt;X&gt; &lt;Y&gt; &lt;Z&gt;</code></td>
+            <td>Warp to literal coordinates. Input order is X Y Z (internally passed as <code>SetPosition(X, Z, Y)</code>).</td>
+          </tr>
+          <tr>
+            <td><code>//pt showpos</code></td>
+            <td><code>/echo</code> your current position as X Z Y.</td>
+          </tr>
+          <tr>
+            <td><code>//pt showpos &lt;chatcmd&gt;</code></td>
+            <td>Sends <code>/&lt;chatcmd&gt; X Z Y</code> instead - e.g. <code>//pt showpos p</code> &rarr; <code>/p X Z Y</code>.</td>
+          </tr>
+          <tr>
+            <td><code>//pt point &lt;name&gt;</code></td>
+            <td>Warp to a saved warp point matched by zone + name (same data as the Warp tab's POINT dropdown).</td>
+          </tr>
+          <tr>
+            <td><code>//pt move &lt;dir&gt;</code></td>
+            <td>Nudge the targeted party member ~3 units. <code>&lt;dir&gt;</code> is one of nw, north, ne, east, se, south, sw, west, up, down.</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="note">
+        For warping to saved points, prefer the supported
+        <a href="#warp-cli"><code>//le goto</code></a> command over
+        <code>//pt point</code> - same result, actively maintained, and it can
+        warp every same-zone character at once with <code>all</code>.
+      </p>
     </section>
 
   </main>

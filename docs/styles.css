@@ -385,6 +385,53 @@ code {
     padding-top: 14px;
 }
 
+/* ─── Feature table (legacy command reference) ──────────────────── */
+
+.feature-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 14px 0 22px;
+    font-size: 14px;
+    color: var(--text-mute);
+}
+
+.feature-table th,
+.feature-table td {
+    text-align: left;
+    vertical-align: top;
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--border);
+}
+
+.feature-table thead th {
+    color: var(--accent-hi);
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    border-bottom: 1px solid var(--border-hi);
+}
+
+.feature-table tbody tr:hover {
+    background: rgba(165, 44, 44, 0.05);
+}
+
+.feature-table td:first-child {
+    white-space: nowrap;
+}
+
+.feature-table td.src {
+    color: var(--text-dim);
+    font-family: 'Consolas', 'Menlo', monospace;
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+@media (max-width: 720px) {
+    .feature-table td:first-child { white-space: normal; }
+    .feature-table .src { display: none; }
+}
+
 /* ─── Sticky-sidebar TOC: nested sub-items ───────────────────────── */
 
 .toc-nav ul ul {

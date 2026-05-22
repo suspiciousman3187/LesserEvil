@@ -13,6 +13,11 @@ LesserEvil.exe.config
 /maps/
 /Windower/
 
+# ── Nested / unrelated projects ─────────────────────────────────────────
+# Forest is its own separate git repo that lives in this folder; it must
+# not be tracked by (or embedded into) the docs repo.
+/Forest/
+
 # ── Build artifacts ─────────────────────────────────────────────────────
 [Bb]in/
 [Oo]bj/
