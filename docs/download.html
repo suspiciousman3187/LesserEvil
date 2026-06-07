@@ -16,10 +16,18 @@
       <a href="about.html">About</a>
       <a href="download.html" class="active">Download</a>
       <a href="features.html">Features</a>
+      <a href="https://discord.gg/vSgYvdh8gT" class="discord-btn" target="_blank" rel="noopener">Discord</a>
       <a href="https://ko-fi.com/lesserevil" class="donate-btn" target="_blank" rel="noopener">♥ Donate</a>
     </nav>
   </div>
 </header>
+
+<div class="version-banner">
+  <strong>v1 docs</strong>
+  These pages document the v1.x release line.
+  LesserEvil <strong>v2.0.0</strong> is now the latest &mdash;
+  <a href="https://github.com/suspiciousman3187/LesserEvil/releases/latest" target="_blank" rel="noopener">grab it on GitHub</a>.
+</div>
 
 <header class="page-header">
   <div class="container">
@@ -38,7 +46,8 @@
     <li>Windows 10 / 11</li>
     <li>FFXI installed (any region)</li>
     <li>[OPTIONAL] <a href="https://www.windower.net/" target="_blank" rel="noopener">Windower 4</a> LesserEvil addon loaded.</li>
-    <li>.NET Framework 4.6.1 runtime</li>
+    <li>.NET Framework 4.6.2 runtime</li>
+    <li>WebView2 runtime (pre-installed on modern Windows; auto-installs if missing)</li>
   </ul>
 </section>
 
@@ -50,15 +59,55 @@
   <br />
   <div class="download-card">
     <div class="download-head">
-      <span class="version-badge">v1.1</span>
-      <span class="download-sub">LesserEvil app + Windower addon</span>
+      <span class="version-badge">v2.0.0</span>
+      <span class="download-sub">Latest &middot; WebView2 + React UI rebuild</span>
     </div>
+    <a href="https://github.com/suspiciousman3187/LesserEvil/releases/latest"
+       target="_blank" rel="noopener">
+      <img src="https://img.shields.io/github/downloads/suspiciousman3187/LesserEvil/total?style=flat&amp;color=A52C2C&amp;label=total%20downloads&amp;cacheSeconds=3600"
+           alt="Total downloads" style="margin-top:10px;display:block">
+    </a>
     <p>
-      Grab the latest release of the app & addon from GitHub below.
+      v2.0.0 is the current release. The Releases page ships three separate
+      assets so you only download what you need:
     </p>
+    <dl>
+      <dt><code>LesserEvil-Desktop-v2.0.0.zip</code></dt>
+      <dd>The desktop application. Extract anywhere and run <code>LesserEvil.exe</code>.
+          Per-user config is auto-created on first launch.</dd>
+
+      <dt><code>LesserEvil-Addon-v2.0.0.zip</code></dt>
+      <dd>Optional Windower companion addon. Extract the <code>LesserEvil</code>
+          folder into your <code>Windower/addons/</code> directory. Only required
+          for the Scan / Track / Widescan / Show-Hidden-Entities features.</dd>
+
+      <dt><code>LesserEvil-Maps-HighRes-v2.0.0.zip</code></dt>
+      <dd>Optional 2048&times;2048 PNG map upgrade pack covering both
+          LesserEvil's instanced / special zones and most standard outdoor
+          and town zones (community Remapster pack integrated). Overlay it
+          on top of the desktop install for sharper maps.</dd>
+    </dl>
     <a class="btn-primary"
        href="https://github.com/suspiciousman3187/LesserEvil/releases/latest"
        target="_blank" rel="noopener">Download latest release &#8599;</a>
+  </div>
+  <br />
+
+  <div class="download-card">
+    <div class="download-head">
+      <span class="version-badge">v1.x</span>
+      <span class="download-sub">Archived &middot; previous release line</span>
+    </div>
+    <p>
+      Older v1.x builds remain on the Releases page if you specifically need
+      them. The pages on this site document v1.x features; v2.0.0 keeps every
+      v1 feature and adds a rebuilt WebView2 + React UI, per-zone profiles
+      that fire for any attached character, multi-toggle entity filters,
+      Show Hidden Entities, and a refreshed map / warp workflow.
+    </p>
+    <a class="btn-primary"
+       href="https://github.com/suspiciousman3187/LesserEvil/releases"
+       target="_blank" rel="noopener">Browse all releases &#8599;</a>
   </div>
   <br />
 </section>

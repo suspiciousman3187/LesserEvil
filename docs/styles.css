@@ -16,6 +16,8 @@
     --code-fg:   #FCD34D;
     --donate:    #EC4899;       /* pink-500 */
     --donate-hi: #F472B6;
+    --discord:   #5865F2;       /* Discord blurple */
+    --discord-hi: #7984F5;
 
     /* Background overlay art. The single knob below controls how visible
        it is — bump toward ~0.18 for prominent, drop to 0 to disable
@@ -142,6 +144,54 @@ body::before {
 .donate-btn:hover {
     background: rgba(236, 72, 153, 0.12) !important;
     color: var(--donate-hi) !important;
+}
+
+.discord-btn {
+    background: transparent !important;
+    color: var(--discord) !important;
+    font-weight: 600 !important;
+    margin-left: 8px;
+    border: 1px solid var(--discord) !important;
+    padding: 5px 10px !important;
+    transition: background 120ms, color 120ms;
+}
+
+.discord-btn:hover {
+    background: rgba(88, 101, 242, 0.14) !important;
+    color: var(--discord-hi) !important;
+}
+
+/* ─── v1 archived-docs banner ────────────────────────────────────
+   Sits just below the topbar on every page so visitors know up-front
+   that this site documents v1.x. The v2 latest-release link sends
+   them to the GitHub Releases page for the current build. */
+.version-banner {
+    background: rgba(165, 44, 44, 0.14);
+    border-bottom: 1px solid rgba(196, 69, 69, 0.40);
+    color: var(--text);
+    font-size: 13px;
+    text-align: center;
+    padding: 10px 16px;
+    line-height: 1.45;
+}
+
+.version-banner strong {
+    color: #F8B4B4;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-size: 11px;
+    margin-right: 6px;
+}
+
+.version-banner a {
+    color: #F8B4B4;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    font-weight: 600;
+}
+
+.version-banner a:hover {
+    color: #FCD0D0;
 }
 
 /* ─── Download card ──────────────────────────────────────────────── */
